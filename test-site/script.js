@@ -1,32 +1,31 @@
-const myImage = document.querySelector("img");
+// A SCRIPT TO HIGHLIGHT TODAY'S OPENING TIMES
 
-myImage.onclick = () => {
-  const mySrc = myImage.getAttribute("src");
-  if (mySrc === "images/hand-pointer.png") {
-    myImage.setAttribute("src", "images/nedcare-logo-v1-at-3x.webp");
-  } else {
-    myImage.setAttribute("src", "hand-pointer.png");
-  }
-};
+// GET THE DAY NUMBER
+// get the day number from a new date object
+// assign to a variable
+let today = new Date().getDay();
 
-let myButton = document.querySelector("button");
-let myHeading = document.querySelector("h1")
-function setUserName() {
-    const myName = prompt("Please enter your name.");
-    if (!myName) {
-        setUserName();
-    } else {
-    localStorage.setItem("name", myName);
-    myHeading.textContent = `Mozilla is cool, ${myName}`;
-    }
-    if (!localStorage.getItem("name")) {
-        setUserName();
-    } else {
-        const storedName = localStorage.getItem("name");
-        myHeading.textContent = `Mozilla is cool, ${storedName}`;
-    }
-  
-};
-myButton.onclick = () => {
-    setUserName();
-};
+// MATCH DAY NUMBER WITH NODE LIST INDEX
+// Sunday is the first JavaScript day but it's
+// the last day in our list so change 0 to 6
+// and decrement all other day numbers so they
+// match with the node list indexes
+if (today === 0){
+	today = 6;
+}else{
+	today--;
+}
+
+// SELECT ALL DTs
+// select all the description term elements
+// assign to a constant
+const dts = document.querySelectorAll('dt');
+
+// ADD A CLASS TO TODAY'S DT
+// use the day number (today variable) to add
+// the 'today' class to the appropriate dt
+// element so it and the adjacent dd can be
+// styled in CSS
+dts[today].className = 'today';
+// node lists begin at 0, so day 1 in our list
+// (Monday) will be node 0
