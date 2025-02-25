@@ -1,0 +1,55 @@
+/*Best way to test if your sheet is successfully linked is to put one rule that turns H1 bright red. 
+This way if the sheet will turn H1 an awful shade of rred, and you will know the HTML file is reading the sheet.*/
+
+/*
+h1 {
+    color: red;
+}
+*/
+
+/*---------------------------------Sheet begins in earnest below. --------------------------------------*/
+
+p,
+li { /*Adding the same style to multiple HTML elements.*/
+    color: green;
+  }
+
+.special { /* Creating classes and their syntax*/
+    color: orange;
+    font-weight: bold;
+}
+
+li em { /*descendant combinators - will only affect <em> elements that are children of a <li> element*/
+    color: rebeccapurple;
+}
+
+h1 + p { /* next-sibling combinator*/
+    font-size: 200%;
+}
+
+p span {
+    color: red;
+}
+
+/*Styling things based on states.*/
+a:link {
+    color: pink;
+  }
+  
+a:visited {
+    color: green;
+}
+  
+a:hover {
+    text-decoration: none;
+}
+
+/*transform, background image, and color*/
+/*
+h1 {
+    transform: translate3d(12px, 50%, 3em);
+}
+body {
+    background-image: linear-gradient(white, grey);
+}
+    */
